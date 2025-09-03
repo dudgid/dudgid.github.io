@@ -12,19 +12,6 @@
   <h1>Welcome!</h1>
   <p>This is simple HTML.</p>
 
-  <!-- Start of Legacy Form Editor Code -->
-  <h2>Legacy Form</h2>
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-  <script>
-  hbspt.forms.create({
-      portalId: "19512115",
-      formId: "af06a711-011a-4076-a907-4a60ab19e680",
-      region: "na1",
-      goToWebinarWebinarKey:'1234567'
-    });
-  </script>
-  <!-- End of Legacy Form Editor Code --> 
-
    <!-- Start of New Form Editor Code -->
   <h2>New Form</h2>
   <script src="https://js.hsforms.net/forms/embed/19512115.js" defer></script>
@@ -32,18 +19,16 @@
   <!-- End of New Form Editor Code --> 
 
   <script>
-// ページロード後にフォームが準備できたら呼ばれるイベント
-document.addEventListener('hsFormReady', function(event) {
+ document.addEventListener('hs-form-event:on-ready', function(event) {
   // event からフォームオブジェクトを取得
   const form = HubSpotFormsV4.getFormFromEvent(event);
 
-  // ここで GoToWebinar キーを追加
+  // GoToWebinarキーを追加
   form.setExtraSubmissionMetadata({
-    goToWebinarWebinarKey: '1234567'  // 固定値でもOK、動的にURLパラメータから取得してもOK
+    goToWebinarWebinarKey: '1234567'
   });
 });
 </script>
-
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19512115.js"></script>
 <!-- End of HubSpot Embed Code -->  
